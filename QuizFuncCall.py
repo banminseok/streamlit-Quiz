@@ -175,6 +175,7 @@ with st.sidebar:
             )
             if file:
                 docs = split_file(file)
+                topic = file.name
         else:
             topic = st.text_input("Search Wikipedia...")
             if topic:
