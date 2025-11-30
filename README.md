@@ -67,3 +67,17 @@ Answers: 삼국사기(o)|세종실록지리지|태정관 지령|SCAPIN 제677호
 
 Question: 울릉도에서 독도까지의 거리는 대략 몇 리인가?
 Answers: 100리|200리(o)|300리|400리
+
+st.markdown("출제 준비가 되었습니다. <br>", unsafe_allow_html=True)
+choiceLevel = st.selectbox(
+"Please select the difficulty level of the quiz.",
+(
+"난이도를 선택하세요 !!",
+"Easy",
+"Hard",
+),
+)
+
+    if choiceLevel != "난이도를 선택하세요 !!":
+        st.write(f"Selected Difficulty: {choiceLevel}")
+        response = run_quiz_chain(docs, topic if topic else file.name)

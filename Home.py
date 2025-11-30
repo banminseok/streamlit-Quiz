@@ -230,7 +230,7 @@ def run_quiz_chain(_docs, topic):
 
 @st.cache_data(show_spinner="Searching Wikipedia...")
 def wiki_search(term):
-    retriever = WikipediaRetriever(top_k_results=5)
+    retriever = WikipediaRetriever(top_k_results=5, lang="ko",  )
     docs = retriever.get_relevant_documents(term)
     return docs
 
